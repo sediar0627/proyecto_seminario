@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "87eefdfe-4cce-4291-97cd-e77c7882dc9e",
+		"name": "PROYECTO SEMINARIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15043807"
+	},
+	"item": [
+		{
+			"name": "Reportar Consulta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"placa\": \"ABC123\",\r\n    \"camara\": \"IDS-2CD74C5G0-IZS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/consultas/creacion",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"consultas",
+						"creacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Procesar Consulta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"respuesta_bien\": true,\r\n    \"soat_vigente\": true,\r\n    \"rtm_vigente\": true,\r\n    \"clase\": \"Clase\",\r\n    \"marca\": \"Marca\",\r\n    \"servicio\": \"Servicio\",\r\n    \"color\": \"Color\",\r\n    \"modelo\": \"Modelo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/consultas/1/procesar",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"consultas",
+						"1",
+						"procesar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
